@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grouping Selectors</title>
+    <title>Grouping Selectors | Descendant Selector | child selector</title>
     <style>
         h1, h2, h3{
             color:blue;
             font-family: Verdana, Geneva, Tahoma, sans-serif ;
         }
+        div p{
+            color:green;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+        }
+        /* Child Selector */
+        ul>li{
+            color:coral;
+            list-style-type: square;
+        }
+
     </style>
 </head>
 <body>
@@ -16,5 +26,22 @@
     <h2>CSS</h2>
     <h3>Selectors</h3>
     <h4>Grouping Selectors</h4>
+
+    <!-- Descendant Selector -->
+    <div>
+        <p>This paragraph here is to depict the use of descendant selctor</p>
+    </div>
+    <p>This is a normal paragraph</p>
+
+    <!-- Child Selector -->
+    <p> child selector</p>
+    <p>selectors</p>
+    <ul>
+        <li>Element selector</li>
+        <li>Descendant selector</li>
+        <li>Child selector</li>
+        <li>Many more....</li>
+    </ul>
+    
 </body>
 </html>
