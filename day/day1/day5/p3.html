@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Colors</title>
+    <style>
+        .named{
+            color: chocolate;
+        }
+        .hexa{
+            /* 0 - f: red, green, blue */
+            color: #ff0023;
+        }
+        .rgd{
+            /* color value: 0 - 255 a(transperancy)*/
+            color: rgb(130, 58,196,1);
+        }
+        .hsl{
+            /*hsl:hue(0-360|0=red,120=green,240=blue),saturation(0-100%),lightness(0-100%) light/dark, transperancy (0-1*/
+            color: hsla(120, 100%, 50%,0.6);
+        }
+        .gradient{
+            /* linear-gradient(direction, color1, color2,...) */
+            
+            background: linear-gradient( red, yellow);
+                       
+        }
+    </style>
+</head>
+<body>
+    <p>CSS Colors</p>
+    <ol>
+        <li class="named">Color Names</li>
+        <li class="hexa">Hexadecimal Colors</li>
+        <li class="rgd">RGB & RGBA Colors</li>
+        <li class="hsl">HSL & HSLA Colors</li>
+        <li class="gradient">Gradient Colors</li>
+    </ol>
+    
+</body>
+</html>
