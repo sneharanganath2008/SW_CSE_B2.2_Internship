@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibling selector | Attribute Selector | Pseudo-class Selector | Pseudo-element Selector</title>
+    <style>
+        /* Sibling Selector */
+        h2+p+p{
+            color:chocolate;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+
+        /* Attribute Selector */
+        input[type="text"]{
+            border: 2px solid chocolate;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        /* Pseudo-class Selector (:)  */
+        input:focus{
+            border-color: blue;
+            outline: none;
+        }
+        a:hover{
+            color: blue;
+            text-decoration: underline;
+            background-color: lightgreen;
+        }
+        /* Pseudo-element Selector (::) */
+        a::after{
+            content: " (opens in a new tab)";
+            font-size: 0.8em;
+            color: gray;
+        }
+        p::first-letter{
+            font-size: 200%;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Selectors</h2>
+    <p>Sibling selector: selects the element which are next to each other.</p>
+    <p>one more paragraph</p>
+    <h2>Heading 2</h2>
+    <a href="#">click here</a>
+    <input type="text" name="name" placeholder="Enter your name" required>
+</body>
+</html>
