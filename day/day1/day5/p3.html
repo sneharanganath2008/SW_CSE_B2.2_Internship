@@ -22,8 +22,12 @@
         }
         .gradient{
             /* linear-gradient(direction, color1, color2,...) */
-            
-            background: linear-gradient( red, yellow);
+             background: linear-gradient( red, yellow);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            display: inline-block;
                        
         }
     </style>
