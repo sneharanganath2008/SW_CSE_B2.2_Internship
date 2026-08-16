@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Flexbox</title>
+    <title>CSS Flexbox | Display | flex-direction </title>
     <style>
         .container{
             display: flex;
             border: 2px solid blue;
             gap: 10px;
             padding: 10px;
+            flex-direction: row;
         }
         .item{
             background-color: burlywood;
             color:darkred;
             padding: 15px;
             
+        }
+        .container2{
+            display: flex;
+            border: 2px solid brown;
+            gap: 10px;
+            padding: 10px;
+            /* column | row | row-reverse | column-reverse */
+            flex-direction: row-reverse;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -24,6 +34,12 @@
         in a container, either in a row or a column. It makes much easier to create responsive, flexible layouts without complex positioning or floats.
     </p>
     <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <div class="container2">
         <div class="item">Item 1</div>
         <div class="item">Item 2</div>
         <div class="item">Item 3</div>
