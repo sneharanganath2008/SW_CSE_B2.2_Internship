@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website Link Submission</title>
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f5f9;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .box {
+            width: 700px;
+            max-width: 100%;
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .question {
+            font-size: 21px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            height: 52px;
+            padding: 0 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #575bd9;
+        }
+
+        button {
+            height: 52px;
+            padding: 0 25px;
+            border: none;
+            border-radius: 8px;
+            background: #575bd9;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4145c4;
+        }
+
+        .success {
+            color: green;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                padding: 25px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- React will display the website here -->
+    <div id="root"></div>
+
+    <!-- React + JavaScript -->
+    <script type="text/babel">
+
+        function App() {
+
+            const [website, setWebsite] = React.useState("");
+            const [message, setMessage] = React.useState("");
+
+            function submitWebsite(event) {
+
+                event.preventDefault();
+
+                if (website === "") {
+                    setMessage("Please paste your website link.");
+                    return;
+                }
+
+                try {
+                    new URL(website);
+
+                    setMessage(
+                        "Website link submitted successfully!"
+                    );
+
+                } catch (error) {
+
+                    setMessage(
+                        "Please enter a valid website link."
+                    );
+                }
+            }
+
+            return (
+                <div className="container">
+
+                    <div className="box">
+
+                        <h1>Question:</h1>
+
+                        <p className="question">
+                            Paste your deployed website link
+                        </p>
+
+                        <form onSubmit={submitWebsite}>
+
+                            <label>
+                                Website URL
+                            </label>
+
+                            <div className="input-area">
+
+                                <input
+                                    type="text"
+                                    placeholder="https://yourwebsite.com"
+                                    value={website}
+                                    onChange={(e) => {
+                                        setWebsite(e.target.value);
+                                        setMessage("");
+                                    }}
+                                />
+
+                                <button type="submit">
+                                    Submit
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                        {message && (
+                            <p
+                                className={
+                                    message.includes("successfully")
+                                    ? "success"
+                                    : "error"
+                                }
+                            >
+                                {message}
+                            </p>
+                        )}
+
+                    </div>
+
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(
+            document.getElementById("root")
+        ).render(<App />);
+
+    </script>
+
+</body>
+</html>
